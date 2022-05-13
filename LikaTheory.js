@@ -8,7 +8,7 @@ var id = "my_custom_theory_id";
 var name = "Currency Incrementl";
 var description = "My Theory.";
 var authors = "Karen";
-var version = 1;
+var version = 2;
 
 var currency;
 var c1, c2;
@@ -67,7 +67,9 @@ var init = () => {
     /////////////////
     //// Achievements
     achievement1 = theory.createAchievement(0, "Achievement 1", "Description 1", () => c1.level > 1);
-    achievement2 = theory.createSecretAchievement(1, "Achievement 2", "Description 2", "Maybe you should buy two levels of c2?", () => c2.level > 1);  
+    achievement2 = theory.createSecretAchievement(1, "Achievement 2", "Description 2", "Maybe you should buy two levels of c2?", () => c2.level > 1); 
+    achievement3 = theory.createSecretAchievement(2, "Achievement 3", "Description 3", "Shoud level 200?", () => c2.level > 200);
+    achievement4 = theory.createSecretAchievement(3, "Achievement 4", "Description 4", "Lucky 7 2's Powers", () => c2.level > 777);
     
 
     ///////////////////
@@ -75,7 +77,8 @@ var init = () => {
     chapter1 = theory.createStoryChapter(0, "My First Chapter", "This is line 1,\nand this is line 2.\n\nNice.", () => c1.level > 0);
     chapter2 = theory.createStoryChapter(1, "My Second Chapter", "This is line 1 again,\nand this is line 2... again.\n\nNice again.", () => c2.level > 0);
     chapter3 = theory.createStoryChapter(2, "Wow Level Special!", "This Anymore Get... \nReach The Super Milestone 2^100!!! \nOverway Never This Theory.", () => c2.level > 100);
-    chapter4 = theory.createStoryChapter(3, "Wow Another Level Special!", "This Anymore Get... \nReach The Super Milestone 2^1000!!! \Yes Yes!!!", () => c2.level > 1000);
+    chapter4 = theory.createStoryChapter(3, "Wow Another Level Special!", "This Anymore Get... \nReach The Super Milestone 2^1000!!! \nYes Yes!!!", () => c2.level > 1000);
+    chapter5 = theory.createStoryChapter(4, "Did!", "Did More About... \nhuh", () => c2.level > 1333);
 
     updateAvailability();
 }
