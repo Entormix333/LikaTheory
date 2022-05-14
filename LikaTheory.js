@@ -51,9 +51,9 @@ var init = () => {
     theory.setMilestoneCost(new LinearCost(20, 20));
 
     {
-        c1Exp = theory.createMilestoneUpgrade(0, 1000);
-        c1Exp.description = Localization.getUpgradeIncCustomExpDesc("c_1", "0.1");
-        c1Exp.info = Localization.getUpgradeIncCustomExpInfo("c_1", "100");
+        c1Exp = theory.createMilestoneUpgrade(0, 6);
+        c1Exp.description = Localization.getUpgradeIncCustomExpDesc("c_1", "1");
+        c1Exp.info = Localization.getUpgradeIncCustomExpInfo("c_1", "1");
         c1Exp.boughtOrRefunded = (_) => theory.invalidatePrimaryEquation();
     }
 
@@ -68,8 +68,10 @@ var init = () => {
     //// Achievements
     achievement1 = theory.createAchievement(0, "Achievement 1", "Description 1", () => c1.level > 1);
     achievement2 = theory.createSecretAchievement(1, "Achievement 2", "Description 2", "Maybe you should buy two levels of c2?", () => c2.level > 1); 
-    achievement3 = theory.createSecretAchievement(2, "Achievement 3", "Description 3", "Shoud level 200?", () => c2.level > 200);
-    achievement4 = theory.createSecretAchievement(3, "Achievement 4", "Description 4", "Lucky 7 2's Powers", () => c2.level > 777);
+    achievement3 = theory.createSecretAchievement(2, "Achievement 3", "Description 3", "Nice!", () => c2.level > 68);
+    achievement4 = theory.createSecretAchievement(3, "Achievement 4", "Description 4", "Shoud level 200?", () => c2.level > 200);
+    achievement5 = theory.createSecretAchievement(4, "Achievement 5", "Description 5", "Lucky 7 2's Powers", () => c2.level > 200);
+    achievement6 = theory.createSecretAchievement(5, "Achievement 6", "Description 6", "179 Uncentillion", () => c2.level > 1023);
     
 
     ///////////////////
