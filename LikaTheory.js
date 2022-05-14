@@ -72,6 +72,7 @@ var init = () => {
     achievement4 = theory.createSecretAchievement(3, "Achievement 4", "Description 4", "Shoud level 200?", () => c2.level > 200);
     achievement5 = theory.createSecretAchievement(4, "Achievement 5", "Description 5", "Lucky 7 2's Powers", () => c2.level > 200);
     achievement6 = theory.createSecretAchievement(5, "Achievement 6", "Description 6", "179 Uncentillion", () => c2.level > 1023);
+    achievement7 = theory.createAchievement(6, "Achievement 7", "Description 7", () => c1.level > 50);
     
 
     ///////////////////
