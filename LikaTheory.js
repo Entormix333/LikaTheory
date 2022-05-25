@@ -89,6 +89,7 @@ var init = () => {
     achievement5 = theory.createSecretAchievement(4, "Achievement 5", "Description 5", "Lucky 7 2's Powers", () => c2.level > 200);
     achievement6 = theory.createSecretAchievement(5, "Achievement 6", "Description 6", "179 Uncentillion", () => c2.level > 1023);
     achievement7 = theory.createAchievement(6, "Achievement 7", "Description 7", () => c1.level > 50);
+    achievement8 = theory.createSecretAchievement(7, "Achievement 8", "Description 8", "1 Millnillion", () => c2.level > 9975);
     
 
     ///////////////////
@@ -98,6 +99,7 @@ var init = () => {
     chapter3 = theory.createStoryChapter(2, "Wow Level Special!", "This Anymore Get... \nReach The Super Milestone 2^100!!! \nOverway Never This Theory.", () => c2.level > 100);
     chapter4 = theory.createStoryChapter(3, "Wow Another Level Special!", "This Anymore Get... \nReach The Super Milestone 2^1000!!! \nYes Yes!!!", () => c2.level > 1000);
     chapter5 = theory.createStoryChapter(4, "Did!", "Did More About... \nhuh", () => c2.level > 1333);
+    chapter6 = theory.createStoryChapter(5, "Forgot!", "What \nOh No... \nNone... \nQ.E.D", () => c2.level > 2048);
 
     updateAvailability();
 }
