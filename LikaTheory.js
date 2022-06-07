@@ -19,6 +19,7 @@ var chapter1, chapter2;
 
 var init = () => {
     currency = theory.createCurrency();
+    currency_GIGI = theory.createCurrency("G", "G");
 
     ///////////////////
     // Regular Upgrades
@@ -47,6 +48,15 @@ var init = () => {
         c3 = theory.createUpgrade(2, currency, new ExponentialCost(5, Math.log2(10)));
         c3.getDescription = (_) => Utils.getMath(getDesc(c3.level));
         c3.getInfo = (amount) => Utils.getMathTo(getInfo(c3.level), getInfo(c3.level + amount));
+    }
+    
+    // q1
+    {
+        let getDesc = (level) => "q_1=3^{" + level + "}";
+        let getInfo = (level) => "q_1=" + getQ1(level).toString(0);
+        q1 = theory.createUpgrade(3, currency_GIGI, new ExponentialCost(100, Math.log2(20)));
+        q1.getDescription = (_) => Utils.getMath(getDesc(q1.level));
+        q1.getInfo = (amount) => Utils.getMathTo(getInfo(q1.level), getInfo(q1.level + amount));
     }
 
     /////////////////////
@@ -111,9 +121,11 @@ var updateAvailability = () => {
 var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
     let bonus = theory.publicationMultiplier;
+    currency_GIGI.value = currency.value.pow(0.009);
     currency.value += dt * bonus * getC1(c1.level).pow(getC1Exponent(c1Exp.level)) *
                                    getC2(c2.level).pow(getC2Exponent(c2Exp.level));
                                    getC3(c3.level).pow(getC3Exponent(c3Exp.level));
+                                   getQ1(q1.level);
 }
 
 var getPrimaryEquation = () => {
@@ -147,6 +159,7 @@ var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.valu
 var getC1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 0);
 var getC2 = (level) => BigNumber.TWO.pow(level);
 var getC3 = (level) => BigNumber.TWO.pow(level);
+var getQ1 = (level) => BigNumber.THREE.pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC3Exponent = (level) => BigNumber.from(1 + 0.05 * level);
